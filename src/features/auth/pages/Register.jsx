@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router";
 import { useAuth } from "../context/useAuth";
+import Loader from "../../../components/Loader";
 
 const Register = () => {
 
@@ -18,7 +19,7 @@ const Register = () => {
     navigate("/");
   }
 
-  if (loader) return (<h1>Loading...</h1>)
+  if (loader) return <Loader />
 
   return (
     <div className="min-h-screen bg-black flex items-center justify-center px-4 relative overflow-hidden">

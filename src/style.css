@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@keyframes reverse-spin {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.reverse-spin {
+  animation: reverse-spin 1.5s linear infinite;
+}

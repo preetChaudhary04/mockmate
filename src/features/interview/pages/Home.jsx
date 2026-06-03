@@ -1,6 +1,9 @@
 import React, { useRef, useState } from "react";
-import { useInterview } from "../context/useInterview"
+import { useInterview } from "../context/useInterview";
 import { useNavigate } from "react-router";
+import { LogOut } from "lucide-react";
+import { useAuth } from "../../auth/context/useAuth";
+import Loader from "../../../components/Loader";
 
 const CreateInterview = () => {
   const resumeRef = useRef();
@@ -9,6 +12,7 @@ const CreateInterview = () => {
 
   const { loader, report, handleGenerateReport } = useInterview();
   const navigate = useNavigate();
+  const { handleLogout } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,13 +22,32 @@ const CreateInterview = () => {
   };
 
   if (loader) {
-    return (
-      <h1>Loading your interview plan...</h1>
-    )
+    return <Loader />;
   }
 
   return (
     <div className="min-h-screen bg-black text-white flex items-center justify-center px-4 py-10">
+
+      {/* Logout Button */}
+      <button
+        onClick={handleLogout}
+        className="
+          absolute top-6 right-6 z-50
+          flex items-center gap-2
+          px-5 py-3 rounded-2xl
+          bg-white/5 backdrop-blur-xl
+          border border-white/10
+          hover:border-red-500/40
+          hover:bg-red-500/10
+          text-gray-300 hover:text-red-400
+          transition-all duration-300
+          shadow-lg hover:shadow-red-500/20 cursor-pointer
+        "
+      >
+        <LogOut size={18} />
+        Logout
+      </button>
+
       {/* Background Glow */}
       <div className="absolute w-72 h-72 bg-cyan-500/20 blur-3xl rounded-full top-10 left-10"></div>
       <div className="absolute w-72 h-72 bg-purple-500/20 blur-3xl rounded-full bottom-10 right-10"></div>
