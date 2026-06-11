@@ -32,9 +32,10 @@ const CreateInterview = () => {
       <button
         onClick={handleLogout}
         className="
-          absolute top-6 right-6 z-50
-          flex items-center gap-2
-          px-5 py-3 rounded-2xl
+          absolute top-6 right-4 sm:right-6 z-50
+          flex items-center justify-center gap-2
+          p-3 sm:px-5 sm:py-3 
+          rounded-xl sm:rounded-2xl
           bg-white/5 backdrop-blur-xl
           border border-white/10
           hover:border-red-500/40
@@ -45,17 +46,18 @@ const CreateInterview = () => {
         "
       >
         <LogOut size={18} />
-        Logout
+        {/* 'hidden' se mobile par gayab, 'sm:block' se tab/desktop par wapas dikhega */}
+        <span className="hidden sm:block">Logout</span>
       </button>
 
       {/* Background Glow */}
       <div className="absolute w-72 h-72 bg-cyan-500/20 blur-3xl rounded-full top-10 left-10"></div>
       <div className="absolute w-72 h-72 bg-purple-500/20 blur-3xl rounded-full bottom-10 right-10"></div>
 
-      <div className="relative w-full max-w-3xl bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl">
+      <div className="relative w-full max-w-3xl bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl mt-8 sm:mt-0">
         {/* Heading */}
         <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
             Create Interview Plan
           </h1>
 

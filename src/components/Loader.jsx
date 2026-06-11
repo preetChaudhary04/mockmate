@@ -37,7 +37,7 @@ const Loader = () => {
         </h1>
 
         <p className="mt-3 text-gray-400 tracking-widest text-sm uppercase">
-          Generating AI Interview Report...
+          Loading...
         </p>
 
         {/* Dots */}

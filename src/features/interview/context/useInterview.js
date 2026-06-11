@@ -1,23 +1,35 @@
 import { useContext, useEffect } from "react";
 import { InterviewContext } from "./interview.context";
-import { useParams } from "react-router"
-import { generateInterviewReport, getInterviewReportById, getAllInterviewReports } from "../services/interview.api";
+import { useParams } from "react-router";
+import {
+  generateInterviewReport,
+  getInterviewReportById,
+  getAllInterviewReports,
+} from "../services/interview.api";
 
 export const useInterview = () => {
-
-  const { interviewId } = useParams()
+  const { interviewId } = useParams();
 
   const context = useContext(InterviewContext);
   if (!context)
     throw new Error("useInterview must be used within an InterviewProvider");
 
-  const { loader, setLoader, report, setReport, reportList, setReportList } = context;
+  const { loader, setLoader, report, setReport, reportList, setReportList } =
+    context;
 
-  const handleGenerateReport = async ({ resume, selfDescription, jobDescription }) => {
+  const handleGenerateReport = async ({
+    resume,
+    selfDescription,
+    jobDescription,
+  }) => {
     setLoader(true);
     let data = null;
     try {
-      data = await generateInterviewReport({ resume, selfDescription, jobDescription });
+      data = await generateInterviewReport({
+        resume,
+        selfDescription,
+        jobDescription,
+      });
       setReport(data.interviewReport);
       return data.interviewReport;
     } catch (error) {
@@ -56,13 +68,9 @@ export const useInterview = () => {
   };
 
   useEffect(() => {
-    if (interviewId) {
-      handleGetInterviewById(interviewId);
-    } else {
-      handleGetAllReports();
-    }
-    handleGetAllReports();
-  }, [ interviewId ])
+    if (interviewId) handleGetInterviewById(interviewId);
+    else handleGetAllReports();
+  }, [interviewId]);
 
   return {
     loader,
