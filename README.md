@@ -4,8 +4,6 @@
 
 # 🚀 MockMate (Frontend)
 
-![MockMate Frontend Banner](https://via.placeholder.com/1200x300/1e293b/f8fafc?text=MockMate+AI+Interview+Prep)
-
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?style=for-the-badge&logo=vercel)](https://mockmate-gules.vercel.app/)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](#)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](#)
@@ -16,7 +14,7 @@
 
 This repository contains the **Frontend** code for the application, built with React, Vite, and Tailwind CSS.
 
-🔗 **Live Demo:** [https://mockmate-gules.vercel.app](https://mockmate-gules.vercel.app) _(Update this if your link changes)_
+🔗 **Live Demo:** [https://mockmate-gules.vercel.app](https://mockmate-gules.vercel.app)  
 ⚙️ **Backend Repository:** [https://github.com/preetChaudhary04/mockmatebackend](https://github.com/preetChaudhary04/mockmatebackend)
 
 ---
